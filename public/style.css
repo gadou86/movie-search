@@ -15,10 +15,18 @@ body {
 
 p {
   font-size: 1.6rem;
+  text-align: center;
+
 }
 
 small {
   font-size: 1.2rem;
+  color: rgb(196, 196, 196);
+}
+
+h3 {
+  color: #313131;
+  text-align: center;
 }
 
 .container {
