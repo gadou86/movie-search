@@ -1,14 +1,30 @@
-import React from 'react'
+import React from "react";
 
-
-export default function SearchMovie() {
-  return(
-    <form className="form">
-      <label htmlFor="query" className="label">Movie Name</label>
-      <input type="text" className="input" name="query"
-        placeholder="i.e Jurrasic Park"
-      />
-      <button className="button" type="submit">Search</button>
-    </form>
-  )
+export default function SearchMovies(){
+    
+    const searchMovies = async (e) => {
+        e.preventDefault();
+        console.log("submitting");
+        
+        const query = "Jurassic Park";
+        
+        const url = `https://api.themoviedb.org/3/search/movie?api_key=ae1c9af628368321ded482b80bf9bbb4&language=en-US&query=${query}&page=1&include_adult=false`;
+        
+        try {
+            const res = await fetch(url);
+            const data  = await res.json();
+            console.log(data);
+        }catch(err){
+            console.error(err);
+        }
+    }
+    
+    return (
+        <form className="form" onSubmit={searchMovies}>
+            <label className="label" htmlFor="query">Movie Name</label>
+            <input className="input" type="text" name="query"
+                placeholder="i.e. Jurassic Park"/>
+            <button className="button" type="submit">Search</button>
+        </form>
+    )
 }
