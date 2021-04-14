@@ -1,0 +1,14 @@
+import React from 'react'
+
+
+export default function SearchMovie() {
+  return(
+    <form className="form">
+      <label htmlFor="query" className="label">Movie Name</label>
+      <input type="text" className="input" name="query"
+        placeholder="i.e Jurrasic Park"
+      />
+      <button className="button" type="submit">Search</button>
+    </form>
+  )
+}
